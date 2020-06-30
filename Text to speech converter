@@ -1,0 +1,68 @@
+#Text to speech converter
+
+
+'''
+There are several APIs available to convert text to speech in python. One of such APIs is the Google
+
+Text to Speech API commonly known as the gTTS API. gTTS is a very easy to use tool which converts the
+
+text entered, into audio which can be saved as a mp3 file.The gTTS API supports several languages including
+
+English, Hindi, Tamil, French, German and many more. The speech can be delivered in any one of the two available
+
+audio speeds, fast or slow. However, as of the latest update, it is not possible to change the voice of the generated audio.
+'''
+
+
+#At first check the python version "python --version" and pip version "pip --version" in cmd and then install gtts "pip install gtts" in  cmd
+
+
+# Import the Gtts module for text
+
+# to speech conversion
+
+from gtts import gTTS
+
+# This module is imported so that we can 
+ 
+# play the converted audio 
+
+import os
+
+fh = open("test.txt", "r")
+
+myText = fh.read().replace("\n", " ")
+
+# Language we want to use
+
+language = 'en'
+
+# Passing the text and language to the engine,
+  
+# here we have marked slow=False. Which tells
+  
+# the module that the converted audio should
+  
+# have a high speed 
+
+output = gTTS(text=myText, lang=language, slow=False)
+
+# Saving the converted audio in a mp3 file named 
+
+output.save("output.mp3")
+
+fh.close()
+
+# Play the converted file
+
+os.system("start output.mp3")
+
+#for run it go to terminal and type "python the file name with .py extention"
+
+
+
+
+
+
+
+
