@@ -12,10 +12,14 @@ Label(root, text ='ENCODE DECODE', font = 'arial 20 bold').pack()
 
 Label(root, text ='DataFlair', font = 'arial 20 bold').pack(side =BOTTOM)
 
+
+
 Text = StringVar()
 private_key = StringVar()
 mode = StringVar()
 Result = StringVar()
+
+
 
 
 def Encode(key,message):
@@ -50,6 +54,8 @@ def Mode():
 def Exit():
     root.destroy()
 
+    
+    
 def Reset():
     Text.set("")
     private_key.set("")
